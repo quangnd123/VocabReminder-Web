@@ -5,5 +5,17 @@
     {
         "code": "vi",
         "name": "Vietnamese"
+    },
+    {
+        "name": "Chinese",
+        "code": "zh"
+    },
+    {
+        "name": "Korean",
+        "code": "ko"
+    },
+    {
+        "name": "Japanese",
+        "code": "ja"
     }
 ]

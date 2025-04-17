@@ -16,7 +16,7 @@ const menuItems = [
 
 export const LandingHeader = () => {
   const {data: session} = useSession()
-  const loginRedirectURL = session ? "/dashboard/vocabulary" : "login"
+  const loginRedirectURL = session ? "/dashboard" : "/login"
   const [menuState, setMenuState] = React.useState(false)
   const [scrolled, setScrolled] = React.useState(false)
 

@@ -2,11 +2,12 @@
 import { Separator } from "@/src/components/ui/separator"
 import { SidebarTrigger } from "@/src/components/ui/sidebar"
 import { usePathname } from 'next/navigation';
+import path from "path";
 
 export function SiteHeader() {
   const currentPath = usePathname();
   const pathAfterDashboard = currentPath.split('/dashboard/')[1];
-  const page = pathAfterDashboard.charAt(0).toUpperCase() + pathAfterDashboard.slice(1)
+  const page = pathAfterDashboard ? (pathAfterDashboard.charAt(0).toUpperCase() + pathAfterDashboard.slice(1)) : "Dashboard" 
 
   return (
     <header className="group-has-data-[collapsible=icon]/sidebar-wrapper:h-12 flex h-12 shrink-0 items-center gap-2 border-b transition-[width,height] ease-linear">
