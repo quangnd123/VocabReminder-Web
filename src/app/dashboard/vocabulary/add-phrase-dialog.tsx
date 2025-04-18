@@ -14,7 +14,7 @@ import { Input } from "@/src/components/ui/input"
 import { Label } from "@/src/components/ui/label"
 import { createPhrase } from "@/src/lib/requests"
 import { useState } from "react"
-import { LanguageCombobox} from "@/src/components/language-combobox";
+import { GenericCombobox} from "@/src/components/generic-combobox";
 import { LanguageData } from "@/src/types/type"
 import languagesJson from "@/public/languages.json"
 import { useSession } from "next-auth/react"
@@ -131,12 +131,14 @@ export function AddPhraseDialog(
                     <p className="text-sm text-muted-foreground">A sentence (context of the vocab) should be added for an accuracy boost of ~ 25%! If not, it is set to the vocab itself.</p>
                 </div>
                 
-            <LanguageCombobox   
+            <GenericCombobox<LanguageData>   
                 label="Language" 
                 description="Language will be auto detected if not specified." 
-                languagesData={languagesData}
-                chosenLanguageData={phraseLanguageData} 
-                setChosenLanguageData={setPhraseLanguageData}
+                options={languagesData}
+                selected={phraseLanguageData} 
+                setSelected={setPhraseLanguageData}
+                getLabel={(lang) => lang.name}
+                getKey={(lang) => lang.code}
             />
             </div>
             <DialogFooter>

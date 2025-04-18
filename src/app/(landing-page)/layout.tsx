@@ -33,7 +33,7 @@ export default async function RootLayout({
       >
         <SessionProvider session={session}>
           <LandingHeader />
-          <main className="overflow-hidden pt-10">
+          <main className="overflow-hidden pt-20">
             <section>
               {children}
             </section>

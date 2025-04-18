@@ -17,7 +17,7 @@ export default {
             return!!auth
         } 
         if (url.pathname === "login" && auth) 
-          return NextResponse.redirect("/dashboard/vocabulary")
+          return NextResponse.redirect("/dashboard")
         return true
         },
     jwt({ token, user, trigger, session }) {
@@ -31,6 +31,8 @@ export default {
             reading_languages: user.reading_languages,
             learning_languages: user.learning_languages,
             reminding_language: user.reminding_language,
+            free_llm: user.free_llm,
+            unallowed_urls: user.unallowed_urls
           }
         }
       }
@@ -43,6 +45,8 @@ export default {
           reading_languages: [],
           learning_languages: [],
           reminding_language: null,
+          free_llm: null,
+          unallowed_urls: []
         }
       }
       else if (trigger === "update"){
@@ -55,6 +59,8 @@ export default {
             reading_languages: session.user.reading_languages,
             learning_languages: session.user.learning_languages,
             reminding_language: session.user.reminding_language,
+            free_llm: session.user.free_llm,
+            unallowed_urls: session.user.unallowed_urls
           }
         }
       }
@@ -70,7 +76,9 @@ export default {
           email: token.email as string,
           reading_languages: token.reading_languages as string[],
           learning_languages: token.learning_languages as string[],
-          reminding_language: token.reminding_language as string
+          reminding_language: token.reminding_language as string,
+          free_llm: token.free_llm as string,
+          unallowed_urls: token.unallowed_urls as string[]
         }
       }
     },
@@ -92,6 +100,8 @@ declare module "next-auth" {
       reading_languages: string[];
       learning_languages: string[];
       reminding_language: string | null;
+      free_llm: string | null;
+      unallowed_urls: string[];
     }
   }
 

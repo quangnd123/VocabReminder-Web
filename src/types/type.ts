@@ -17,6 +17,8 @@ export type BaseResponse<T> = {
     reading_languages: string[];
     learning_languages: string[];
     reminding_language: string | null;
+    free_llm: string | null;
+    unallowed_urls: string[];
   };
   
   // User model
@@ -27,12 +29,14 @@ export type BaseResponse<T> = {
     reading_languages: string[];
     learning_languages: string[];
     reminding_language: string | null;
+    free_llm: string | null;
+    unallowed_urls: string[];
   };
   
-  // Response for updating user
-  export type UpdateUserResponse = BaseResponse<User>;
+// Response for updating user
+export type UpdateUserResponse = BaseResponse<User>;
 
-
+export type GetFreeLLMsResponse = BaseResponse<string[]>;
 
 
 export type PhraseData = {
