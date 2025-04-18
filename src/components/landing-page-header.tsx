@@ -8,10 +8,8 @@ import { cn } from "@/src/lib/utils"
 import { useSession } from "next-auth/react"
 
 const menuItems = [
-  { name: "Features", href: "#link" },
-  { name: "Solution", href: "#link" },
-  { name: "Pricing", href: "#link" },
-  { name: "About", href: "#link" },
+  { name: "About", href: "/about" },
+  { name: "Pricing", href: "/pricing" },
 ]
 
 export const LandingHeader = () => {

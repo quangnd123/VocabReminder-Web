@@ -60,8 +60,11 @@ export default function MyPage() {
               <span className="font-medium">{hasWordTokenizerlanguages}</span>. Other languages are still working ok with partial support. If your preferred languages are not listed and you want full support, please let me know, and I'll add it.
             </p>
           </div>
-
+          
           <div className="mt-6 flex items-center space-x-4">
+            <p className="text-sm text-gray-600">
+                <span className="font-semibold">Contact:</span>
+            </p>
             {linkedinUrl && (
               <Link href={linkedinUrl} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-500">
                 <FaLinkedin className="h-5 w-5" />
