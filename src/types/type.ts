@@ -5,10 +5,10 @@ export type LanguageData = {
 
 // Generic base response type
 export type BaseResponse<T> = {
-    status: "success" | "error";
-    error: string | null;
-    data: T | null;
-  };
+  status: "success" | "error";
+  error?: string;
+  data?: T;
+};
   
   // Request for updating a user
   export type UpdateUserRequest = {
@@ -68,3 +68,6 @@ export type DeletePhrasesRequest = {
 }
 
 export type DeletePhrasesResponse = BaseResponse<null>
+
+
+export type AuthResponse = BaseResponse<User>

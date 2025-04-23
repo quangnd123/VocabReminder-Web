@@ -1,13 +1,9 @@
 // app/api/auth/session/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/src/auth";
+import { AuthResponse, User } from "@/src/types/type";
 
 // Define the response type
-interface AuthResponse {
-  isLoggedIn: boolean;
-  user?: { id: string };
-  error?: string;
-}
 
 export async function GET(req: NextRequest): Promise<NextResponse<AuthResponse>> {
   const extensionOrigin = `chrome-extension://${process.env.BROWSER_EXTENSION_ID}`
@@ -26,7 +22,7 @@ export async function GET(req: NextRequest): Promise<NextResponse<AuthResponse>>
   // Deny requests from non-extension origins
   if (requestOrigin && requestOrigin !== extensionOrigin) {
     return NextResponse.json(
-      { isLoggedIn: false, error: "Access denied: Origin not allowed" },
+      { status: "error", error: "Access denied: Origin not allowed" },
       { status: 403 }
     );
   }
@@ -37,18 +33,18 @@ export async function GET(req: NextRequest): Promise<NextResponse<AuthResponse>>
     if (session?.user) {
       return NextResponse.json(
         {
-          isLoggedIn: true,
-          user: { id: session.user.id! },
+          status: "success",
+          data: session.user as User,
         },
         { headers }
       );
     }
 
-    return NextResponse.json({ isLoggedIn: false }, { headers });
+    return NextResponse.json({ status: "error", error: "Not logged in." }, { headers });
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : "Unexpected error";
     return NextResponse.json(
-      { isLoggedIn: false, error: errorMessage },
+      { status: "error", error: errorMessage },
       { status: 500, headers }
     );
   }

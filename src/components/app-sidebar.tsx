@@ -19,7 +19,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/src/components/ui/sidebar"
-
+import SlothLogo from "@/src/components/sloth-logo"
 import { useSession } from "next-auth/react"
 
 const data = {
@@ -51,10 +51,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               asChild
               className="data-[slot=sidebar-menu-button]:!p-1.5"
             >
-              <a href="/dashboard">
-                <ArrowUpCircleIcon className="h-5 w-5" />
-                <span className="text-base font-semibold">Vocab Reminder</span>
-              </a>
+              <SlothLogo href="/dashboard"/>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>

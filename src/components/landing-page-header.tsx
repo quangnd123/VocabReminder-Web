@@ -5,10 +5,11 @@ import { Button } from "@/src/components/ui/button"
 import React from "react"
 import { useScroll } from "motion/react"
 import { cn } from "@/src/lib/utils"
+import SlothLogo from "@/src/components/sloth-logo"
 import { useSession } from "next-auth/react"
 
+
 const menuItems = [
-  { name: "About", href: "/about" },
   { name: "Pricing", href: "/pricing" },
 ]
 
@@ -39,9 +40,7 @@ export const LandingHeader = () => {
         <div className="mx-auto max-w-5xl px-6 transition-all duration-300">
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
             <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
-              <Link href="/" aria-label="home" className="flex items-center space-x-2">
-                {/* <Logo /> */}
-              </Link>
+              <SlothLogo href="/"/>
 
               <button
                 onClick={() => setMenuState(!menuState)}
