@@ -1,6 +1,5 @@
 import { GetPhrasesRequest, GetPhrasesResponse, CreatePhraseRequest, CreatePhraseResponse, DeletePhrasesRequest, DeletePhrasesResponse } from "@/src/types/type";
 import {UpdateUserRequest, UpdateUserResponse} from  "@/src/types/type";
-import { GetFreeLLMsResponse } from "@/src/types/type";
 
 async function postRequest<TRequest, TResponse>(
     path: string,
@@ -63,8 +62,4 @@ return postRequest<DeletePhrasesRequest, DeletePhrasesResponse>("delete_phrases"
   
 export function updateUser(req: UpdateUserRequest): Promise<UpdateUserResponse> {
   return postRequest<UpdateUserRequest, UpdateUserResponse>("update_user", req);
-}
-
-export function getFreeLLMs(): Promise<GetFreeLLMsResponse> {
-  return getRequest<GetFreeLLMsResponse>("get_free_LLMs");
 }

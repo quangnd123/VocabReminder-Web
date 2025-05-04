@@ -55,25 +55,26 @@ export function AddPhraseDialog(
 
     const createPhraseHandler = async ()=>{
         const trimmedPhrase = phrase.trim()
-
-        const finalSentence = sentence || trimmedPhrase
         
         if (phrase === "") {
             setStatusMessage("Error: Phrase cannot be empty")
             return;
         }
 
-        const phraseIdx = finalSentence.indexOf(trimmedPhrase)
-        if (phraseIdx===-1){
-            setStatusMessage("Error: Cannot find the phrase in the sentence")
-            return;
+        let phraseIdx: number | undefined = undefined;
+        if (sentence){
+            phraseIdx = sentence.indexOf(trimmedPhrase)
+            if (phraseIdx === -1){
+                setStatusMessage("Error: Cannot find the phrase in the sentence")
+                return;
+            }
         }
 
         setLoading(true)
         const response = await createPhrase({
             user_id: session.user.id!,
             phrase: trimmedPhrase,
-            sentence: finalSentence,
+            sentence: sentence ?? undefined,
             phrase_idx: phraseIdx,
             language: phraseLanguageData?.code
         })

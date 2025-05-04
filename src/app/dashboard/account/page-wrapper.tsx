@@ -25,20 +25,19 @@ function areListsEqual(a: any[], b: any[]): boolean {
   return sortedA.every((val, i) => val === sortedB[i])
 }
 
-export default function ProfilePageCLient({freeLLMs}: {freeLLMs: string[]}) {
+export default function ProfilePageCLient() {
   const { data: session, update } = useSession()
   if (!session || !session.user) return null;
   
   const user = session.user 
   const reading = (languagesData as LanguageData[]).filter(languageData => user.reading_languages.includes(languageData["code"]))
   const learning = (languagesData as LanguageData[]).filter(languageData => user.learning_languages.includes(languageData["code"]))
-  const reminding = (languagesData as LanguageData[]).find(languageData => user.reminding_language === languageData["name"])
+  const llm_language = (languagesData as LanguageData[]).find(languageData => user.llm_response_language === languageData["code"])
 
   const [name, setName] = useState(user.name ?? "")
   const [readingLanguagesData, setReadingLanguagesData] = useState<LanguageData[]>(reading)
   const [learningLanguagesData, setLearningLanguagesData] = useState<LanguageData[]>(learning)
-  const [remindingLanguageData, setRemindingLanguageData] = useState<LanguageData | null>(reminding?? null)
-  const [freeLLM, setFreeLLM] = useState(user.free_llm)
+  const [llmLanguageData, setLLMLanguageData] = useState<LanguageData | null>(llm_language?? null)
   const [unallowedURLs, setUnallowedURLs ] = useState(user.unallowed_urls)
   
   const [input, setInput] = useState("")
@@ -75,12 +74,11 @@ export default function ProfilePageCLient({freeLLMs}: {freeLLMs: string[]}) {
     // profile unchanged
     const readingLanguages = Array.from(new Set(readingLanguagesData.map(data => data.code)))
     const learningLanguages = Array.from(new Set(learningLanguagesData.map(data => data.code)))
-    const remindingLanguage = remindingLanguageData?.["name"] ?? null
+    const llmLanguage = llmLanguageData?.["code"] ?? null
     if (areListsEqual(unallowedURLs, user.unallowed_urls) &&
-    freeLLM == user.free_llm &&
       areListsEqual(readingLanguages,user.reading_languages) && 
       areListsEqual(learningLanguages, user.learning_languages) && 
-      remindingLanguage=== user.reminding_language &&
+      llmLanguage === user.llm_response_language &&
       name === user.name
     ){
       toast("Success",{
@@ -96,8 +94,7 @@ export default function ProfilePageCLient({freeLLMs}: {freeLLMs: string[]}) {
       name: name,
       reading_languages: readingLanguages,
       learning_languages: learningLanguages,
-      reminding_language: remindingLanguage,
-      free_llm: freeLLM,
+      llm_response_language: llmLanguage,
       unallowed_urls: unallowedURLs
     })
     
@@ -148,23 +145,13 @@ export default function ProfilePageCLient({freeLLMs}: {freeLLMs: string[]}) {
       />
 
       <GenericCombobox<LanguageData>
-        label="Reminding Language"
-        description="Reminders for your vocab will be generated in this language."
+        label="LLM Response Language"
+        description="Reminders for your vocab and Word translation will be generated in this language."
         options={languagesData} 
-        selected={remindingLanguageData} 
-        setSelected={setRemindingLanguageData} 
+        selected={llmLanguageData} 
+        setSelected={setLLMLanguageData} 
         getLabel={(lang) => lang.name}
         getKey={(lang) => lang.code}
-      />
-
-      <GenericCombobox<string>
-        label="Large Languagle Model"
-        description="Choose a large language model to generate reminders."
-        options={freeLLMs} 
-        selected={freeLLM} 
-        setSelected={setFreeLLM} 
-        getLabel={(llm) => llm}
-        getKey={(llm) => llm}
       />
 
     <div className="space-y-4">

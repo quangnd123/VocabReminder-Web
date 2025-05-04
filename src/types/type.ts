@@ -16,8 +16,7 @@ export type BaseResponse<T> = {
     name: string | null;
     reading_languages: string[];
     learning_languages: string[];
-    reminding_language: string | null;
-    free_llm: string | null;
+    llm_response_language: string | null;
     unallowed_urls: string[];
   };
   
@@ -28,17 +27,14 @@ export type BaseResponse<T> = {
     email: string | null;
     reading_languages: string[];
     learning_languages: string[];
-    reminding_language: string | null;
-    free_llm: string | null;
+    llm_response_language: string | null;
     unallowed_urls: string[];
   };
   
-// Response for updating user
 export type UpdateUserResponse = BaseResponse<User>;
 
-export type GetFreeLLMsResponse = BaseResponse<string[]>;
 
-
+// phrase
 export type PhraseData = {
   id: string
   phrase: string
@@ -56,8 +52,8 @@ export type GetPhrasesResponse = BaseResponse<PhraseData[]>;
 export type CreatePhraseRequest = {
   user_id: string
   phrase: string
-  phrase_idx: number
-  sentence: string
+  phrase_idx?: number
+  sentence?: string
   language?: string
 }
 
@@ -69,5 +65,5 @@ export type DeletePhrasesRequest = {
 
 export type DeletePhrasesResponse = BaseResponse<null>
 
-
+//auth
 export type AuthResponse = BaseResponse<User>
