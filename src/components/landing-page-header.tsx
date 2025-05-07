@@ -1,11 +1,11 @@
 "use client"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
-import { Button } from "@/src/components/ui/button"
+import { Button } from "@/components/ui/button"
 import React from "react"
 import { useScroll } from "motion/react"
-import { cn } from "@/src/lib/utils"
-import SlothLogo from "@/src/components/sloth-logo"
+import { cn } from "@/lib/utils"
+import SlothLogo from "@/components/sloth-logo"
 import { useSession } from "next-auth/react"
 
 

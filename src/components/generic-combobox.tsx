@@ -5,16 +5,16 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@/src/components/ui/command";
+} from "@/components/ui/command";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/src/components/ui/popover";
+} from "@/components/ui/popover";
 import { Check, ChevronsUpDown } from "lucide-react";
-import { Label } from "@/src/components/ui/label";
-import { Button } from "@/src/components/ui/button";
-import { cn } from "@/src/lib/utils";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { useState } from "react";
 
 type GenericComboboxProps<T> = {

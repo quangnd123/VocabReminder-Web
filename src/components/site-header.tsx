@@ -1,6 +1,6 @@
 "use client"
-import { Separator } from "@/src/components/ui/separator"
-import { SidebarTrigger } from "@/src/components/ui/sidebar"
+import { Separator } from "@/components/ui/separator"
+import { SidebarTrigger } from "@/components/ui/sidebar"
 import { usePathname } from 'next/navigation';
 import path from "path";
 

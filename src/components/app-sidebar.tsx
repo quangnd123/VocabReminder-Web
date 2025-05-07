@@ -7,9 +7,9 @@ import {
   LayoutDashboardIcon,
 } from "lucide-react"
 
-import { NavMain } from "@/src/components/nav-main"
-import { NavSecondary } from "@/src/components/nav-secondary"
-import { NavUser } from "@/src/components/nav-user"
+import { NavMain } from "@/components/nav-main"
+import { NavSecondary } from "@/components/nav-secondary"
+import { NavUser } from "@/components/nav-user"
 import {
   Sidebar,
   SidebarContent,
@@ -18,8 +18,8 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/src/components/ui/sidebar"
-import SlothLogo from "@/src/components/sloth-logo"
+} from "@/components/ui/sidebar"
+import SlothLogo from "@/components/sloth-logo"
 import { useSession } from "next-auth/react"
 
 const data = {

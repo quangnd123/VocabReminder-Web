@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { cn } from '@/src/lib/utils';
+import { cn } from '@/lib/utils';
 import Link from 'next/link';
 export default function SlothLogo({ className, href }: { className?: string, href: string }) {
   return (

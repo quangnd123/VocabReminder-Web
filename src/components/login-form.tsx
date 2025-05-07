@@ -1,16 +1,16 @@
 "use client"
 
-import { cn } from "@/src/lib/utils"
-import { Button } from "@/src/components/ui/button"
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
 import {
     Card,
     CardContent,
     CardDescription,
     CardHeader,
     CardTitle,
-  } from "@/src/components/ui/card"
-import { Input } from "@/src/components/ui/input"
-import { Label } from "@/src/components/ui/label"
+  } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 import { handleEmailSignIn, handleGoogleSignIn } from "../lib/auth"
 import { useState } from "react"
 

@@ -1,7 +1,7 @@
 // app/api/auth/session/route.ts
 import { NextRequest, NextResponse } from "next/server";
-import { auth } from "@/src/auth";
-import { AuthResponse, User } from "@/src/types/type";
+import { auth } from "@/auth";
+import { AuthResponse, User } from "@/types/type";
 
 // Define the response type
 

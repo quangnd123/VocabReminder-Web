@@ -1,5 +1,5 @@
-import { GetPhrasesRequest, GetPhrasesResponse, CreatePhraseRequest, CreatePhraseResponse, DeletePhrasesRequest, DeletePhrasesResponse } from "@/src/types/type";
-import {UpdateUserRequest, UpdateUserResponse} from  "@/src/types/type";
+import { GetPhrasesRequest, GetPhrasesResponse, CreatePhraseRequest, CreatePhraseResponse, DeletePhrasesRequest, DeletePhrasesResponse } from "@/types/type";
+import {UpdateUserRequest, UpdateUserResponse} from  "@/types/type";
 
 async function postRequest<TRequest, TResponse>(
     path: string,

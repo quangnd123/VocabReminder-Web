@@ -1,11 +1,11 @@
 "use client";
 
-import { cn } from "@/src/lib/utils";
-import { LanguageData } from "@/src/types/type";
-import hasWordTokenizerlanguagesJson from "@/public/has-word-tokenizer-languages.json";
+import { cn } from "@/lib/utils";
+import { LanguageData } from "@/types/type";
+import hasWordTokenizerlanguagesJson from "@/../public/has-word-tokenizer-languages.json";
 import { useSession } from "next-auth/react";
-import { Button } from "@/src/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/src/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import Link from "next/link";
 import { FaLinkedin, FaFacebook, FaLink } from "react-icons/fa"; // Import social icons
 

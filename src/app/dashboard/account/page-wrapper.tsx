@@ -1,18 +1,18 @@
 'use client'
 
 import { useState } from "react"
-import { Input } from "@/src/components/ui/input"
-import { Button } from "@/src/components/ui/button"
-import { Label } from "@/src/components/ui/label"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
+import { Label } from "@/components/ui/label"
 import { useSession } from "next-auth/react"
 import { Loader2 } from "lucide-react"
 import { toast } from "sonner"
-import { GenericCombobox } from "@/src/components/generic-combobox"
-import { GenericMultiCombobox } from "@/src/components/generic-multi-combobox"
-import languagesJson from "@/public/languages.json"
-import { LanguageData } from "@/src/types/type"
-import { Badge } from "@/src/components/ui/badge"
-import { updateUser } from "@/src/lib/requests"
+import { GenericCombobox } from "@/components/generic-combobox"
+import { GenericMultiCombobox } from "@/components/generic-multi-combobox"
+import languagesJson from "@/../public/languages.json"
+import { LanguageData } from "@/types/type"
+import { Badge } from "@/components/ui/badge"
+import { updateUser } from "@/lib/requests"
 
 const languagesData: LanguageData[]  = languagesJson 
 

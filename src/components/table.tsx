@@ -19,7 +19,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/src/components/ui/table"
+} from "@/components/ui/table"
 
 import {
   ChevronLeft,
@@ -34,10 +34,10 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/src/components/ui/select"
+} from "@/components/ui/select"
 
-import { Button } from "@/src/components/ui/button"
-import { Input } from "@/src/components/ui/input"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
