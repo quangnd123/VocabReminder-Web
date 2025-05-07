@@ -1,4 +1,4 @@
-import { Button } from "@/src/components/ui/button"
+import { Button } from "@/components/ui/button"
 import { PlusIcon } from "lucide-react"
 import { Loader2 } from "lucide-react"
 import {
@@ -9,16 +9,16 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/src/components/ui/dialog"
-import { Input } from "@/src/components/ui/input"
-import { Label } from "@/src/components/ui/label"
-import { createPhrase } from "@/src/lib/requests"
+} from "@/components/ui/dialog"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { createPhrase } from "@/lib/requests"
 import { useState } from "react"
-import { GenericCombobox} from "@/src/components/generic-combobox";
-import { LanguageData } from "@/src/types/type"
-import languagesJson from "@/public/languages.json"
+import { GenericCombobox} from "@/components/generic-combobox";
+import { LanguageData } from "@/types/type"
+import languagesJson from "@/../public/languages.json"
 import { useSession } from "next-auth/react"
-import { PhraseData } from "@/src/types/type"
+import { PhraseData } from "@/types/type"
 import { toast } from "sonner"
 
 const languagesData: LanguageData[]  = languagesJson 

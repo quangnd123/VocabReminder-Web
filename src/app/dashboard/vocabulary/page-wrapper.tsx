@@ -2,9 +2,9 @@
 import { useState } from "react"
 import { DataTable } from "../../../components/table";
 import { AddPhraseDialog } from "./add-phrase-dialog";
-import { PhraseData } from "@/src/types/type";
+import { PhraseData } from "@/types/type";
 import { DeletePhrasesDialog } from "./delete-phrases-dialog";
-import { Button } from "@/src/components/ui/button"
+import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,7 +12,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/src/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu"
 import { MoreHorizontal } from "lucide-react"
 import { ColumnDef } from "@tanstack/react-table"
 

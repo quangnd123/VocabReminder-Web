@@ -1,7 +1,7 @@
-import { PhraseData } from "@/src/types/type";
-import { auth } from "@/src/auth";
+import { PhraseData } from "@/types/type";
+import { auth } from "@/auth";
 import PageWrapper from "./page-wrapper";
-import { getPhrases } from "@/src/lib/requests";
+import { getPhrases } from "@/lib/requests";
 
 const mockVocabData: PhraseData[] = [
   {
