@@ -1,6 +1,4 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import Link from "next/link";
-import { FaLinkedin, FaFacebook, FaLink } from "react-icons/fa"; // Import social icons
 
 export default function PricingPage(){
     return (
@@ -8,23 +6,21 @@ export default function PricingPage(){
         <Card className="w-full max-w-md shadow-md">
             <CardHeader>
             <CardTitle className="text-2xl font-semibold">Pricing</CardTitle>
-            <CardDescription>Learn about Vocab Reminder's plans.</CardDescription>
+            <CardDescription>Learn about Vocab Reminder&#39;s plans.</CardDescription>
             </CardHeader>
             <CardContent className="grid gap-6">
             <div className="space-y-2">
-                <h3 className="text-lg font-semibold">Free Plan</h3>
+                <h3 className="text-lg font-semibold">Free Plan:</h3>
                 <p className="text-sm text-gray-600">
-                    Vocab Reminder is free.
-                </p>
-                <p className="text-sm text-gray-500 italic">
-                Note: the free version uses free Large Language Model APIs, so slow response time is expected (approximately 5-10 seconds for a request).
+                    Access to all basic features. <br/>
+                    (Sometimes) quite slow and stupid reminders.
                 </p>
             </div>
 
             <div className="space-y-2">
-                <h3 className="text-lg font-semibold">Coming Soon: Paid Plans</h3>
+                <h3 className="text-lg font-semibold">Paid Plan: Coming soon</h3>
                 <p className="text-sm text-gray-600">
-                    Significantly faster and smarter response speed.
+                    I&#39;m trying to make the system smarter and faster, so it becomes worth your money.
                 </p>
             </div>
             </CardContent>

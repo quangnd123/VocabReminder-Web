@@ -4,7 +4,6 @@ import { Loader2 } from "lucide-react"
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -34,7 +33,6 @@ export function AddPhraseDialog(
     }
 ) {
     const {data: session} = useSession()
-    if (!session?.user) return null 
     const [open, setOpen] = useState(false)
     const [loading, setLoading] = useState<boolean>(false);
     const [phrase, setPhrase] = useState<string>("");
@@ -42,6 +40,7 @@ export function AddPhraseDialog(
     const [phraseLanguageData, setPhraseLanguageData] = useState<LanguageData | null>(null);
     const [statusMessage, setStatusMessage] = useState<string>("")
     
+    if (!session?.user) return null 
     const handleOpenChange = (isOpen: boolean) => {
         setOpen(isOpen)
         if (isOpen) {

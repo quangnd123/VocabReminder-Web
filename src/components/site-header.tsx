@@ -2,7 +2,6 @@
 import { Separator } from "@/components/ui/separator"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { usePathname } from 'next/navigation';
-import path from "path";
 
 export function SiteHeader() {
   const currentPath = usePathname();

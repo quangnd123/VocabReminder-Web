@@ -2,13 +2,11 @@
 
 import * as React from "react"
 import {
-  ArrowUpCircleIcon,
   HelpCircleIcon,
   LayoutDashboardIcon,
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
-import { NavSecondary } from "@/components/nav-secondary"
 import { NavUser } from "@/components/nav-user"
 import {
   Sidebar,

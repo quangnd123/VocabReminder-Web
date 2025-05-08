@@ -1,4 +1,4 @@
-import { signIn, useSession } from "next-auth/react";
+import { signIn } from "next-auth/react";
 import { redirect } from "next/navigation"
 import { AuthError } from "next-auth"
 
@@ -22,9 +22,4 @@ export const handleGoogleSignIn = async ()=>{
         }
         throw error;
     }
-}
-
-export const isAuthenticated = ()=>{
-    const {data: session} = useSession();
-    return !!!session
 }

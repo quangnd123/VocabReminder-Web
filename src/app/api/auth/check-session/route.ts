@@ -6,7 +6,7 @@ import { AuthResponse, User } from "@/types/type";
 // Define the response type
 
 export async function GET(req: NextRequest): Promise<NextResponse<AuthResponse>> {
-  const extensionOrigin = `chrome-extension://${process.env.BROWSER_EXTENSION_ID}`
+  const extensionOrigin = `chrome-extension://${process.env.BROWSER_EXTENSION_EDGE_ID}`
 
   // Check the request's origin
   const requestOrigin = req.headers.get("origin");
@@ -52,7 +52,7 @@ export async function GET(req: NextRequest): Promise<NextResponse<AuthResponse>>
 
 // Handle OPTIONS preflight request for CORS
 export async function OPTIONS(req: NextRequest) {
-  const extensionOrigin = `chrome-extension://${process.env.BROWSER_EXTENSION_ID}`
+  const extensionOrigin = `chrome-extension://${process.env.BROWSER_EXTENSION_EDGE_ID}`
 
   const requestOrigin = req.headers.get("origin");
 

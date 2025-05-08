@@ -1,6 +1,5 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { LanguageData } from "@/types/type";
 import hasWordTokenizerlanguagesJson from "@/../public/has-word-tokenizer-languages.json";
 import { useSession } from "next-auth/react";
@@ -50,14 +49,14 @@ export default function MyPage() {
 
           <div>
             <p className="text-sm text-gray-600">
-              <span className="font-semibold">Development Note:</span> Vocab Reminder is in its early stages, and I'm a solo player. If you want to report bugs, request features, or simply chat, please please please contact me. I'm so happy to know if someone is using my product.  
+              <span className="font-semibold">Development Note:</span> Vocab Reminder is in its early stages, and I&#39;m a solo player. If you want to report bugs, request features, or simply chat, please please please contact me. I&#39;m so happy to know if someone is using my product.  
             </p>
           </div>
 
           <div>
             <p className="text-sm text-gray-600">
               <span className="font-semibold">Language Support:</span> Vocab Reminder uses word tokenizers for analyzing your online reading material. Full support is currently available for:{" "}
-              <span className="font-medium">{hasWordTokenizerlanguages}</span>. Other languages are still working ok with partial support. If your preferred languages are not listed and you want full support, please let me know, and I'll add it.
+              <span className="font-medium">{hasWordTokenizerlanguages}</span>. Other languages are still working ok with partial support. If your preferred languages are not listed and you want full support, please let me know, and I&#39;ll add it.
             </p>
           </div>
           

@@ -1,4 +1,4 @@
-import type { NextAuthConfig, DefaultSession, User } from "next-auth"
+import type { NextAuthConfig} from "next-auth"
 import "next-auth/jwt"
 import "next-auth";
 import { NextResponse } from "next/server";

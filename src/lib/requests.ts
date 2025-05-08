@@ -22,31 +22,31 @@ async function postRequest<TRequest, TResponse>(
     }
 }
 
-async function getRequest<TResponse>(path: string): Promise<TResponse> {
-  try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/${path}`, {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    });
+// async function getRequest<TResponse>(path: string): Promise<TResponse> {
+//   try {
+//     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/${path}`, {
+//       method: "GET",
+//       headers: { "Content-Type": "application/json" },
+//     });
 
-    if (!res.ok) {
-      const errorData = await res.json();
-      return {
-        status: "error",
-        error: errorData?.error || `HTTP error! status: ${res.status}`,
-        data: null,
-      } as TResponse;
-    }
+//     if (!res.ok) {
+//       const errorData = await res.json();
+//       return {
+//         status: "error",
+//         error: errorData?.error || `HTTP error! status: ${res.status}`,
+//         data: null,
+//       } as TResponse;
+//     }
 
-    return await res.json();
-  } catch (error) {
-    return {
-      status: "error",
-      error: (error as Error).message ?? "Unknown error occurred",
-      data: null,
-    } as TResponse;
-  }
-}
+//     return await res.json();
+//   } catch (error) {
+//     return {
+//       status: "error",
+//       error: (error as Error).message ?? "Unknown error occurred",
+//       data: null,
+//     } as TResponse;
+//   }
+// }
 
 export function getPhrases(req: GetPhrasesRequest): Promise<GetPhrasesResponse> {
 return postRequest<GetPhrasesRequest, GetPhrasesResponse>("get_phrases", req);
