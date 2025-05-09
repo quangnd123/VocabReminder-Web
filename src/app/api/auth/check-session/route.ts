@@ -20,12 +20,12 @@ export async function GET(req: NextRequest): Promise<NextResponse<AuthResponse>>
   });
 
   // Deny requests from non-extension origins
-  // if (requestOrigin && requestOrigin !== extensionOrigin) {
-  //   return NextResponse.json(
-  //     { status: "error", error: "Access denied: Origin not allowed" },
-  //     { status: 403 }
-  //   );
-  // }
+  if (requestOrigin && requestOrigin !== extensionOrigin) {
+    // return NextResponse.json(
+    //   { status: "error", error: "Access denied: Origin not allowed" },
+    //   { status: 403 }
+    // );
+  }
 
   try {
     const session = await auth();
@@ -57,9 +57,9 @@ export async function OPTIONS(req: NextRequest) {
   const requestOrigin = req.headers.get("origin");
 
   // Deny preflight if origin doesn’t match
-  // if (requestOrigin && requestOrigin !== extensionOrigin) {
-  //   return new NextResponse(null, { status: 403 });
-  // }
+  if (requestOrigin && requestOrigin !== extensionOrigin) {
+    // return new NextResponse(null, { status: 403 });
+  }
 
   return new NextResponse(null, {
     status: 204,
